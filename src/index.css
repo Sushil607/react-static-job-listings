@@ -41,6 +41,8 @@ button{
 
 main{
     padding: 2rem 4rem;
+    width: 100%;
+    position: relative;
 }
 
 /**
@@ -137,6 +139,7 @@ main{
 
 .job-listing-tags-container{
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     justify-content: flex-end;
 }
@@ -163,6 +166,11 @@ main{
 **/
 
 .filter-tag-list{
+    position: absolute;
+    top: -2rem;
+    left: 4rem;
+    right: 4rem;
+    border-radius: 4px;
     background-color: white;
     padding: 1rem 1.4rem;
     display: grid;
@@ -177,6 +185,10 @@ main{
     justify-content: flex-start;
     align-items: center;
 }
+
+/**
+* ! FilterTag Component  
+**/
 
 .filter-tag{
     border-radius: 4px;
@@ -214,4 +226,50 @@ main{
 
 .clear-filter-tag-list-btn:hover{
     text-decoration: underline;
+}
+
+/**
+* ! Media Queries
+**/
+
+@media(max-width:425px){
+    .job-listings-container{
+        margin-top: 8rem;
+    }
+    .joblisting{
+        margin: 3rem 0;
+        padding-top: 3rem ;
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .joblisting-logo{
+        position: absolute;
+        width: 60px;
+        top: -20px;
+    }
+    .joblisting-info{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .separator{
+        margin: 1.4rem 0;
+        height: 1px;
+        width: 100%;
+        background-color: var(--dark-grayish-cyan);
+    }
+    .job-listing-tags-container{
+        justify-content: flex-start;
+    }
+}
+
+@media(max-width:375px){
+    main{
+        padding: 1rem;
+    }
+    .filter-tag-list{
+        left: 1rem;
+        right: 1rem;
+    }
 }
