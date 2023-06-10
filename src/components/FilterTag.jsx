@@ -2,9 +2,9 @@ import React from 'react'
 
 import RemoveIcon from "../assets/images/icon-remove.svg"
 
-const FilterTag = ({filterTag}) => {
+const FilterTag = ({filterTag,removeFilterTag}) => {
   return (
-    <div className='filter-tag'> <div className="content">{filterTag}</div> <img src={RemoveIcon} className='remove-icon' alt="" /> </div>
+    <div className='filter-tag'> <div className="content">{filterTag}</div> <img onClick={()=> removeFilterTag(filterTag)} src={RemoveIcon} className='remove-icon' alt="remove icon" /> </div>
   )
 }
 

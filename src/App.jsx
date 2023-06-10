@@ -28,11 +28,18 @@ function App() {
     }
   }
 
+  const removeFilterTag = (tag) => {
+    // return only those filterTags those are not equal to tag
+    setFilterTagsList(filterTagsList.filter((filterTag) => filterTag !== tag))
+  }
+
+  
+
   return (
     <>  
       <Header/>
       <main>
-        { filterTagsList.length>0 && <FilterTagList filterTagsList={filterTagsList}/>}
+        { filterTagsList.length>0 && <FilterTagList filterTagsList={filterTagsList} removeFilterTag={removeFilterTag}/>}
         <div className="job-listings-container">
           {isLoading ? <div>Loading...</div> : (
             jobListings.map((jobListing) => <JobListing key={jobListing.id} jobListing={jobListing} addFilterTag={addFilterTag}/>)

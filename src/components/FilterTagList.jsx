@@ -2,11 +2,11 @@ import React from 'react'
 
 import FilterTag from './FilterTag'
 
-const FilterTagList = ({filterTagsList}) => {
+const FilterTagList = ({filterTagsList,removeFilterTag}) => {
   return (
     <div className='filter-tag-list'>
         <div className="filter-tags">
-            {filterTagsList.map((filterTag,index) => <FilterTag key={index} filterTag={filterTag}/>)}
+            {filterTagsList.map((filterTag,index) => <FilterTag key={index} filterTag={filterTag} removeFilterTag={removeFilterTag}/>)}
         </div>
         <button className="clear-filter-tag-list-btn">Clear</button>
     </div>
