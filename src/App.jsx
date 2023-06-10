@@ -36,6 +36,15 @@ function App() {
   const clearFilterTags = () => {
     setFilterTagsList([])
   }
+
+  const filteredJobListings = jobListings.filter((jobListing) => {
+    let skills = [jobListing.role,jobListing.level,...jobListing.languages,...jobListing.tools]
+    let result =  filterTagsList.every(tag => skills.includes(tag));
+    if(result){
+      return jobListing
+    }
+  })
+
   return (
     <>  
       <Header/>
@@ -43,7 +52,7 @@ function App() {
         { filterTagsList.length>0 && <FilterTagList filterTagsList={filterTagsList} removeFilterTag={removeFilterTag} clearFilterTags={clearFilterTags}/>}
         <div className="job-listings-container">
           {isLoading ? <div>Loading...</div> : (
-            jobListings.map((jobListing) => <JobListing key={jobListing.id} jobListing={jobListing} addFilterTag={addFilterTag}/>)
+            filteredJobListings.map((jobListing) => <JobListing key={jobListing.id} jobListing={jobListing} addFilterTag={addFilterTag}/>)
           )}
         </div>
       </main>
