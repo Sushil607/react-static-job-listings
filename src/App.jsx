@@ -33,13 +33,14 @@ function App() {
     setFilterTagsList(filterTagsList.filter((filterTag) => filterTag !== tag))
   }
 
-  
-
+  const clearFilterTags = () => {
+    setFilterTagsList([])
+  }
   return (
     <>  
       <Header/>
       <main>
-        { filterTagsList.length>0 && <FilterTagList filterTagsList={filterTagsList} removeFilterTag={removeFilterTag}/>}
+        { filterTagsList.length>0 && <FilterTagList filterTagsList={filterTagsList} removeFilterTag={removeFilterTag} clearFilterTags={clearFilterTags}/>}
         <div className="job-listings-container">
           {isLoading ? <div>Loading...</div> : (
             jobListings.map((jobListing) => <JobListing key={jobListing.id} jobListing={jobListing} addFilterTag={addFilterTag}/>)
