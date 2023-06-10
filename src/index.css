@@ -36,6 +36,7 @@ img{
 button{
     cursor: pointer;
     border: none;
+    font-family: 'League Spartan', sans-serif;
 }
 
 main{
@@ -155,4 +156,62 @@ main{
 .tag:hover{
     background-color: var(--desaturated-dark-cyan);
     color: white;
+}
+
+/**
+* ! FilterTagList Component  
+**/
+
+.filter-tag-list{
+    background-color: white;
+    padding: 1rem 1.4rem;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr auto;
+}
+
+.filter-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.filter-tag{
+    border-radius: 4px;
+    background-color: var(--light-grayish-cyan-filter-tablets);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    padding:  0 1rem;
+    color: var(--desaturated-dark-cyan);   
+}
+
+.remove-icon{
+    cursor: pointer;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: var(--desaturated-dark-cyan);
+    width: 24px;
+    height: 24px;
+    padding: 0.4rem;
+}
+
+.remove-icon:hover{
+    background-color: black;
+}
+
+.clear-filter-tag-list-btn{
+    background-color: white;
+    color: var(--desaturated-dark-cyan);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.clear-filter-tag-list-btn:hover{
+    text-decoration: underline;
 }
