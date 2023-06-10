@@ -4,6 +4,7 @@ import {useState,useEffect} from "react"
 import JobListingsData from "./data/data.json"
 
 // Importing Components
+import Header from "./components/Header"
 import JobListing from "./components/JobListing"
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
   },[])
 
   return (
-    <>
+    <>  
+      <Header/>
       <main>
         <div className="job-listings-container">
           {isLoading ? <div>Loading...</div> : (
