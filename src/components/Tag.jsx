@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Tag = ({tag}) => {
+const Tag = ({tag,addFilterTag}) => {
   return (
-    <div className='tag'>{tag}</div>
+    <div className='tag' onClick={()=> addFilterTag(tag)}>{tag}</div>
   )
 }
 

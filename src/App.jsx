@@ -11,7 +11,7 @@ import JobListing from "./components/JobListing"
 function App() {
   const [isLoading,setIsLoading] = useState(false)
   const [jobListings,setJobListings] = useState([])
-  const [filterTagsList,setFilterTagsList] = useState(["Frontend","CSS"])
+  const [filterTagsList,setFilterTagsList] = useState([])
   
   useEffect(()=> {
     setIsLoading(true)
@@ -21,6 +21,13 @@ function App() {
     },1000)
   },[])
 
+  const addFilterTag = (tag) => {
+    // if tag is not present in filter tag list
+    if(!filterTagsList.includes(tag)){
+      setFilterTagsList([...filterTagsList,tag])
+    }
+  }
+
   return (
     <>  
       <Header/>
@@ -28,7 +35,7 @@ function App() {
         { filterTagsList.length>0 && <FilterTagList filterTagsList={filterTagsList}/>}
         <div className="job-listings-container">
           {isLoading ? <div>Loading...</div> : (
-            jobListings.map((jobListing) => <JobListing key={jobListing.id} jobListing={jobListing}/>)
+            jobListings.map((jobListing) => <JobListing key={jobListing.id} jobListing={jobListing} addFilterTag={addFilterTag}/>)
           )}
         </div>
       </main>

@@ -28,7 +28,7 @@ const tags = [jobListing.role,jobListing.level,...jobListing.languages,...jobLis
             </div>
         </div>
         <div className="job-listing-tags-container">
-            {tags.map((tag,index) => <Tag key={index} tag={tag}/>)}
+            {tags.map((tag,index) => <Tag key={index} tag={tag} addFilterTag={props.addFilterTag}/>)}
         </div>
     </div>
   )
