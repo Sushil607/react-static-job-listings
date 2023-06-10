@@ -23,6 +23,7 @@
 }
 
 body{
+    background-color: var(--light-grayish-cyan-background);
     font-size: 15px;
     font-family: 'League Spartan', sans-serif;
 }
@@ -32,6 +33,10 @@ button{
     border: none;
 }
 
+main{
+    padding: 2rem 4rem;
+}
+
 /**
 * ! Typography
 **/
@@ -39,3 +44,110 @@ button{
 /**
 * ! Components
 **/
+
+/**
+* ! JobListing Component  
+**/
+
+.joblisting{
+    border-radius: 4px;
+    margin: 1rem 0;
+    background-color: white;
+    padding: 1rem 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new-border{
+    border-left: 4px solid var(--desaturated-dark-cyan);
+}
+
+.joblisting-info{
+    display: flex;
+    gap: 14px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.joblisting-logo{
+    width: 70px;
+    height: auto;
+}
+
+.joblisting-badges{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.joblisting-company{
+    font-size: 1.1rem;
+    color: var(--desaturated-dark-cyan);
+}
+.new-badge{
+    border-radius: 500px;
+    padding: 0.2rem 0.4rem;
+    text-transform: uppercase;
+    background-color: var(--desaturated-dark-cyan);
+    color: white;
+}
+
+.featured-badge{
+    border-radius: 500px;
+    padding: 0.2rem 0.4rem;
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+}
+
+.joblisting-position{
+    cursor: pointer;
+    margin: 0.4rem 0;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.joblisting-position:hover{
+    color: var(--desaturated-dark-cyan);
+}
+
+.joblisting-extra{
+    font-size: 0.9rem;
+    color: var(--dark-grayish-cyan);
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.circle{
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--dark-grayish-cyan);
+}
+
+.job-listing-tags-container{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/**
+* ! Tag Component  
+**/
+
+.tag{
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0.5rem 0.8rem;
+    background-color: var(--light-grayish-cyan-filter-tablets);
+    color: var(--desaturated-dark-cyan);
+}
+
+.tag:hover{
+    background-color: var(--desaturated-dark-cyan);
+    color: white;
+}
