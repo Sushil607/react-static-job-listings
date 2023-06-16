@@ -1,6 +1,6 @@
 import React from 'react'
 
-import HeaderImg from "../assets/images/bg-header-desktop.svg"
+import HeaderImg from "/images/bg-header-desktop.svg"
 
 const Header = () => {
   return (

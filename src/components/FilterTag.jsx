@@ -1,6 +1,6 @@
 import React from 'react'
 
-import RemoveIcon from "../assets/images/icon-remove.svg"
+import RemoveIcon from "/images/icon-remove.svg"
 
 const FilterTag = ({filterTag,removeFilterTag}) => {
   return (
